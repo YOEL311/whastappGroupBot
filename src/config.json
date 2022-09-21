@@ -1,14 +1,25 @@
 {
-    "welcomeMassage": "",
+    "MANAGER_CONTACT": "972548475559@c.us",
+    "GROUP_ID": "120363046288760231@g.us",
+    "INITIAL_STRING": "שלום",
     "challenges": [
         {
-            "question": "",
-            "answer": ""
+            "question": "בכדי לוודא שאינך בוט \n נצטרך לשאול מספר שאלות \n אם ברצונך להמשיך הקש 1",
+            "answer": "1"
         },
         {
-            "question": "",
-            "answer": ""
+            "question": "שאלה ראשונה \n כמה זה 1+1",
+            "answer": "2"
+        },
+        {
+            "question": "שאלה שניה \n כמה זה 2+2",
+            "answer": "4"
         }
     ],
-    "MANAGER_CONTACT": "972548475559@c.us"
+    "STRINGS": {
+        "CORRECT": "מצוין👏🏼\n שאלה נוספת",
+        "FAIL": "טעות😢",
+        "TRY_AGAIN": "נסה שנית",
+        "YOU_FINISH": "סיימת בהצלחה🔥 מיד תקבל קישור הזמנה,\n הקישור תקף לדקה אחת בלבד!"
+    }
 }
