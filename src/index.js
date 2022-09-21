@@ -1,4 +1,4 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, NoAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const config = require('./config.json');
 
@@ -19,7 +19,7 @@ const resetUserData = (id) => {
 };
 
 const client = new Client({
-	authStrategy: new LocalAuth(),
+	authStrategy: new NoAuth(),
 });
 const sendQuestion = (to, stage) => {
 	client.sendMessage(to, challenges[stage].question);
