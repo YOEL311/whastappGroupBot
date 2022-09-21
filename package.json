@@ -6,7 +6,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon src/index.js"
+    "dev": "npx nodemon src/index.js",
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "ISC",
