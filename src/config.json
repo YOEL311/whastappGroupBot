@@ -20,6 +20,9 @@
         "CORRECT": "מצוין👏🏼\n שאלה נוספת",
         "FAIL": "טעות😢",
         "TRY_AGAIN": "נסה שנית",
-        "YOU_FINISH": "סיימת בהצלחה🔥\n מיד תקבל קישור הזמנה,\n הקישור תקף לדקה אחת בלבד!"
+        "YOU_FINISH": "סיימת בהצלחה🔥",
+        "TO_SEND_INVITE": "מיד תקבל קישור הזמנה,\n הקישור תקף לדקה אחת בלבד!",
+        "YOU_ALREADY_MEMBER": "לא ניתן להצטרף פעמיים🤔",
+        "ADD_SUCCESSFUL": "נוספת בהצלחה😀"
     }
 }

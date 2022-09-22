@@ -88,26 +88,45 @@ client.on('message', async (msg) => {
 			// if end of questions array
 			if (challenges.length - 1 == stage) {
 				client.sendMessage(msg.from, STRINGS.YOU_FINISH);
-
 				const chatGroup = await client.getChatById(GROUP_ID);
 				if (chatGroup.isReadOnly || !chatGroup.isGroup) {
 					return;
 				}
-				const invite = await chatGroup.getInviteCode();
-				client.sendMessage(msg.from, `${WHATSAPP_BASE_URL}${invite}`);
-				// reset data of user
-				resetUserData(msg.from);
-				// reset invite
-				setTimeout(() => {
-					chatGroup.revokeInvite();
-				}, 1000 * 60);
-				return;
+
+				// const contact = await chatGroup.participants;
+				// const isAlreadyExist = contact.findIndex(
+				// 	(el) => el.id._serialized === msg.from
+				// );
+				// if (isAlreadyExist !== -1) {
+				// 	// isAlreadyExist in this group
+				// 	client.sendMessage(msg.from, STRINGS.YOU_ALREADY_MEMBER);
+				// 	return;
+				// }
+
+				const addedResult = await chatGroup.addParticipants([msg.from]);
+				if (addedResult[msg.from].status === 200) {
+					client.sendMessage(msg.from, STRINGS.ADD_SUCCESSFUL);
+					resetUserData(msg.from);
+					return;
+				} else {
+					const invite = await chatGroup.getInviteCode();
+					// send invite
+					client.sendMessage(msg.from, `${WHATSAPP_BASE_URL}${invite}`);
+					// reset data of user
+					resetUserData(msg.from);
+					// reset invite
+					setTimeout(() => {
+						chatGroup.revokeInvite();
+					}, 1000 * 60);
+					return;
+				}
 			}
 			client.sendMessage(msg.from, STRINGS.CORRECT);
 			setStage(msg.from, stage + 1);
 			sendQuestion(msg.from, stage + 1);
 			return;
 		} else {
+			// if answer is wrong
 			client.sendMessage(msg.from, STRINGS.TRY_AGAIN);
 			return;
 		}
