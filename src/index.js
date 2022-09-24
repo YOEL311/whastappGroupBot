@@ -34,6 +34,7 @@ const setStage = (id, newStage) => {
 client.on('qr', (qr) => {
 	// Generate and scan this code with your phone
 	console.log('qr', qr);
+	console.log(Date().toLocaleString());
 	qrcode.generate(qr, { small: true });
 });
 
