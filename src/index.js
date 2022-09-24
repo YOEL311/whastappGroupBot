@@ -18,9 +18,7 @@ const resetUserData = (id) => {
 	runTimeData.users[id] = undefined;
 };
 
-const client = new Client({
-	authStrategy: new NoAuth(),
-});
+const client = new Client();
 const sendQuestion = (to, stage) => {
 	client.sendMessage(to, challenges[stage].question);
 };
