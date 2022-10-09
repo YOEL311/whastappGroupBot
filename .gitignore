@@ -6,3 +6,4 @@ npm-debug.log
 yarn-error.log
 .wwebjs_auth
 yarn.lock
+.microtica/
